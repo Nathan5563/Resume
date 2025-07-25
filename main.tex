@@ -1,0 +1,363 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Welcome to Overleaf --- just edit your LaTeX on the left,
+% and we'll compile it for you on the right. If you open the
+% 'Share' menu, you can invite other users to edit at the same
+% time. See www.overleaf.com/learn for more info. Enjoy!
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\input{glyphtounicode}
+
+
+%----------FONT OPTIONS----------
+% sans-serif
+% \usepackage[sfdefault]{FiraSans}
+% \usepackage[sfdefault]{roboto}
+% \usepackage[sfdefault]{noto-sans}
+% \usepackage[default]{sourcesanspro}
+
+% serif
+% \usepackage{CormorantGaramond}
+% \usepackage{charter}
+
+
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+% Ensure that generate pdf is machine readable/ATS parsable
+\pdfgentounicode=1
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubSubheading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textit{\small#1} & \textit{\small #2} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & #2 \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+%-------------------------------------------
+%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{document}
+
+%----------HEADING----------
+\begin{center}
+    \textbf{\Huge \scshape Nathan Abebe} \\ \vspace{1pt}
+    \small +1 (203) 994-2951 $|$ \href{mailto:nathan.abebe@yale.edu}{\underline{nathan.abebe@yale.edu}} $|$ 
+    \href{https://linkedin.in/nathan5563}{\underline{linkedin.in/nathan5563}} $|$
+    \href{https://github.com/Nathan5563}{\underline{github.com/Nathan5563}}
+\end{center}
+
+
+%-----------EDUCATION-----------
+\section{Education}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {Yale University}{New Haven, CT}
+      {B.S. Computer Science, B.S. Electrical Engineering (ABET)}{May 2028}
+      \resumeItemListStart
+        \resumeItem{Relevant Coursework: Systems Programming, Data Structures, Discrete Mathematics, Electronics}
+      \resumeItemListEnd
+  \resumeSubHeadingListEnd
+
+
+%-----------EXPERIENCE-----------
+\section{Experience}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {Undergraduate Research Assistant}{Jun 2025 -- Present}
+      {Yale University -- Efficient Computing Lab}{New Haven, CT}
+      \resumeItemListStart
+        \resumeItem{Engineered a Linux kernel module to intercept {\tt fpga\_manager} bitstream I/O, reducing 1 MB write latency by 94.1\% (501 ms → 29.5 ms) and boosting throughput 17× (1.95 → 33.2 MB/s) with standardized benchmarking.}
+        \resumeItem{Developed a FUSE-based user space file system over Ethernet to mount 5 Xilinx VMK180 nodes, achieving 32 MB/s sustained bitstream throughput with $<$10 ms delivery jitter under concurrent loads.}
+        \resumeItem{Automated benchmarking in Python to profile reconfiguration time, network utilization, and CPU overhead across three architectures (NFS, FUSE, LKM), guiding iterative optimizations for scalability.}
+        \resumeItem{Integrated a custom lightweight TCP protocol, reducing packet loss from 2\% to 0\% from previous UDP solution and enabling deterministic programming in distributed testbeds.}
+      \resumeItemListEnd
+    \resumeSubheading
+      {Avionics \& Control Lead}{Sep 2024 -- Present}
+      {Yale Undergraduate Aerospace Association -- Project Liquid}{New Haven, CT}
+      \resumeItemListStart
+        \resumeItem{Implemented Teensy 4.1 firmware in C++ for high-speed GPIO/PWM valve control across 5 propellant valves.}
+        \resumeItem{Developed reusable C++ drivers for NAT 8252 pressure transducers achieving $\pm$1\% measurement accuracy.  }
+        \resumeItem{Optimized Electron (JS) GUI delay from seconds to $\approx$20 ms when streaming telemetry/actuating valves.}
+        \resumeItem{Designed and simulated shunt-resistor current-sense circuits in LTspice for accurate ground support and control.}
+        \resumeItem{Rewired and re-grounded the EGSE chassis to meet electrical-safety standards and improve EMI robustness.}
+      \resumeItemListEnd
+    \resumeSubheading
+      {Software Engineer}{Nov 2020 -- May 2024}
+      {Talonova Aerospace}{Remote}
+      \resumeItemListStart
+        \resumeItem{Engineered a collectible planet-sharing system using Next.js, TypeScript, Supabase, and Tailwind CSS, offloading to the client side to cut server latency by 35\%.}
+        \resumeItem{Implemented procedural planet generation with simplex noise algorithms, boosting level design efficiency by 80\%.}
+        \resumeItem{Designed 16+ interactive game scenes, terrain systems, vehicle controllers, and inventory UI elements.}
+      \resumeItemListEnd
+  \resumeSubHeadingListEnd
+
+
+%-----------PROJECTS-----------
+\section{Projects}
+    \resumeSubHeadingListStart
+        \resumeProjectHeading
+          {\textbf{NES Emulator} $|$ \emph{Rust, Software Architecture, SDL2, Graphical Debuggers}}{Mar 2025 -- Present}
+          \resumeItemListStart
+            \resumeItem{Architected and developed an emulator for the Nintendo Entertainment System using Rust.}
+            \resumeItem{Implemented a cycle-accurate 2A03 core in Rust, covering all 56 CPU opcodes and addressing modes via a four-stage micro-op state machine, validated against official NES test ROMs with $>$99\% compliance.}
+            \resumeItem{Built an SDL2 rendering pipeline delivering 256$\times$240@60 FPS using zero-copy front/back buffering and authentic NES palette lookup, sustaining real-time performance on $<$5 ms per frame.}
+            \resumeItem{Created an egui-based debugger GUI displaying live CPU registers, memory maps, pattern tables, and PPU nametables with breakpoint/watchpoint support, halving average debug iteration time.}
+            \resumeItem{GitHub link: \href{https://github.com/Nathan5563/nnes}{github.com/Nathan5563/nnes}}
+          \resumeItemListEnd
+      \resumeProjectHeading
+          {\textbf{CHIP-8 Interpreter} $|$ \emph{C, Computer Architecture, Multithreading, SDL2, Debugging}}{Dec 2024 -- Mar 2025}
+          \resumeItemListStart
+            \resumeItem{Implemented key components such as opcode fetch-decode-execute cycle, I/O management, graphics rendering, and timing with multithreading (using POSIX threads).}
+            \resumeItem{Designed and debugged algorithms to emulate the virtual machine's CPU cycles and system behavior with accurate 60 Hz timers and variable cycles per frame to ensure compatibility with various games.}
+            \resumeItem{GitHub link: \href{https://github.com/Nathan5563/chip-8}{github.com/Nathan5563/chip-8}}
+          \resumeItemListEnd
+    \resumeSubHeadingListEnd
+
+%-----------PROGRAMMING SKILLS-----------
+\section{Technical Skills}
+ \begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+     \textbf{Languages}{: C, C++, Rust, Python, x86 Assembly, TypeScript, JavaScript, C\#, HTML, CSS} \\
+     \textbf{Frameworks}{: React, Node.js, Express, NumPy, Matplotlib, Mongoose, Bootstrap, Tailwind CSS, Next.js, Unity} \\
+     \textbf{Tools}{: Git, Supabase, MongoDB, GraphQL, Postman, Vim, VS Code, Visual Studio, PyCharm, WebStorm} \\
+    }}
+ \end{itemize}
+
+\end{document}----------
+% sans-serif
+% \usepackage[sfdefault]{FiraSans}
+% \usepackage[sfdefault]{roboto}
+% \usepackage[sfdefault]{noto-sans}
+% \usepackage[default]{sourcesanspro}
+
+% serif
+% \usepackage{CormorantGaramond}
+% \usepackage{charter}
+
+
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+% Ensure that generate pdf is machine readable/ATS parsable
+\pdfgentounicode=1
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubSubheading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textit{\small#1} & \textit{\small #2} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & #2 \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+%-------------------------------------------
+%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{document}
+
+%----------HEADING----------
+\begin{center}
+    \textbf{\Huge \scshape Nathan Abebe} \\ \vspace{1pt}
+    \small +1 (203) 994-2951 $|$ \href{mailto:nathan.abebe@yale.edu}{\underline{nathan.abebe@yale.edu}} $|$ 
+    \href{https://linkedin.in/nathan5563}{\underline{linkedin.in/nathan5563}} $|$
+    \href{https://github.com/Nathan5563}{\underline{github.com/Nathan5563}}
+\end{center}
+
+
+%-----------EDUCATION-----------
+\section{Education}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {Yale University}{New Haven, CT}
+      {B.S. Computer Science, B.S. Electrical Engineering (ABET)}{May 2028}
+      \resumeItemListStart
+        \resumeItem{Relevant Coursework: Systems Programming, Data Structures, Discrete Mathematics, Electronics}
+      \resumeItemListEnd
+  \resumeSubHeadingListEnd
+
+
+%-----------EXPERIENCE-----------
+\section{Experience}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {Undergraduate Research Assistant}{Jun 2025 -- Present}
+      {Yale University -- Efficient Computing Lab}{New Haven, CT}
+      \resumeItemListStart
+        \resumeItem{Engineered a Linux kernel module to intercept {\tt fpga\_manager} bitstream I/O, reducing 1 MB write latency by 94.1\% (501 ms → 29.5 ms) and boosting throughput 17× (1.95 → 33.2 MB/s) with standardized benchmarking.}
+        \resumeItem{Developed a FUSE-based user space file system over Ethernet to mount 5 Xilinx VMK180 nodes, achieving 32 MB/s sustained bitstream throughput with $<$10 ms delivery jitter under concurrent loads.}
+        \resumeItem{Automated benchmarking in Python to profile reconfiguration time, network utilization, and CPU overhead across three architectures (NFS, FUSE, LKM), guiding iterative optimizations for scalability.}
+        \resumeItem{Integrated a custom lightweight TCP protocol, reducing packet loss from 2\% to 0\% from previous UDP solution and enabling deterministic programming in distributed testbeds.}
+      \resumeItemListEnd
+    \resumeSubheading
+      {Avionics \& Control Lead}{Sep 2024 -- Present}
+      {Yale Undergraduate Aerospace Association -- Project Liquid}{New Haven, CT}
+      \resumeItemListStart
+        \resumeItem{Implemented Teensy 4.1 firmware in C++ for high-speed GPIO/PWM valve control across 5 propellant valves.}
+        \resumeItem{Developed reusable C++ drivers for NAT 8252 pressure transducers achieving $\pm$1\% measurement accuracy.  }
+        \resumeItem{Optimized Electron (JS) GUI delay from seconds to $\approx$20 ms when streaming telemetry/actuating valves.}
+        \resumeItem{Designed and simulated shunt-resistor current-sense circuits in LTspice for accurate ground support and control.}
+        \resumeItem{Rewired and re-grounded the EGSE chassis to meet electrical-safety standards and improve EMI robustness.}
+      \resumeItemListEnd
+    \resumeSubheading
+      {Software Engineer}{Nov 2020 -- May 2024}
+      {Talonova Aerospace}{Remote}
+      \resumeItemListStart
+        \resumeItem{Engineered a collectible planet-sharing system using Next.js, TypeScript, Supabase, and Tailwind CSS, offloading to the client side to cut server latency by 35\%.}
+        \resumeItem{Implemented procedural planet generation with simplex noise algorithms, boosting level design efficiency by 80\%.}
+        \resumeItem{Designed 16+ interactive game scenes, terrain systems, vehicle controllers, and inventory UI elements.}
+      \resumeItemListEnd
+  \resumeSubHeadingListEnd
+
+
+%-----------PROJECTS-----------
+\section{Projects}
+    \resumeSubHeadingListStart
+        \resumeProjectHeading
+          {\textbf{NES Emulator} $|$ \emph{Rust, Software Architecture, SDL2, Graphical Debuggers}}{Mar 2025 -- Present}
+          \resumeItemListStart
+            \resumeItem{Architected and developed an emulator for the Nintendo Entertainment System using Rust.}
+            \resumeItem{Implemented a cycle-accurate 2A03 core in Rust, covering all 56 CPU opcodes and addressing modes via a four-stage micro-op state machine, validated against official NES test ROMs with $>$99\% compliance.}
+            \resumeItem{Built an SDL2 rendering pipeline delivering 256$\times$240@60 FPS using zero-copy front/back buffering and authentic NES palette lookup, sustaining real-time performance on $<$5 ms per frame.}
+            \resumeItem{Created an egui-based debugger GUI displaying live CPU registers, memory maps, pattern tables, and PPU nametables with breakpoint/watchpoint support, halving average debug iteration time.}
+            \resumeItem{GitHub link: \href{https://github.com/Nathan5563/nnes}{github.com/Nathan5563/nnes}}
+          \resumeItemListEnd
+      \resumeProjectHeading
+          {\textbf{CHIP-8 Interpreter} $|$ \emph{C, Computer Architecture, Multithreading, SDL2, Debugging}}{Dec 2024 -- Mar 2025}
+          \resumeItemListStart
+            \resumeItem{Implemented key components such as opcode fetch-decode-execute cycle, I/O management, graphics rendering, and timing with multithreading (using POSIX threads).}
+            \resumeItem{Designed and debugged algorithms to emulate the virtual machine's CPU cycles and system behavior with accurate 60 Hz timers and variable cycles per frame to ensure compatibility with various games.}
+            \resumeItem{GitHub link: \href{https://github.com/Nathan5563/chip-8}{github.com/Nathan5563/chip-8}}
+          \resumeItemListEnd
+    \resumeSubHeadingListEnd
+
+%-----------PROGRAMMING SKILLS-----------
+\section{Technical Skills}
+ \begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+     \textbf{Languages}{: C, C++, Rust, Python, x86 Assembly, TypeScript, JavaScript, C\#, HTML, CSS} \\
+     \textbf{Frameworks}{: React, Node.js, Express, NumPy, Matplotlib, Mongoose, Bootstrap, Tailwind CSS, Next.js, Unity} \\
+     \textbf{Tools}{: Git, Supabase, MongoDB, GraphQL, Postman, Vim, VS Code, Visual Studio, PyCharm, WebStorm} \\
+    }}
+ \end{itemize}
+
+\end{document}
