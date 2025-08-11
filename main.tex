@@ -71,6 +71,10 @@
   }
 }
 
+\newcommand{\resumeSummary}[1]{
+    #1
+}
+
 \newcommand{\resumeSubheading}[4]{
   \vspace{-2pt}\item
     \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
@@ -116,6 +120,9 @@
     \href{https://github.com/Nathan5563}{github.com/Nathan5563}
 \end{center}
 
+%-----------SUMMARY-------------
+\section{Summary}
+    \resumeSummary{Highly driven researcher and engineer specializing in critical, low-latency systems. Experienced in scalable FPGA architectures, embedded software development, and all types of real-time systems. Passionate about delivering high-impact solutions that accelerate innovation and system efficiency.}
 
 %-----------EDUCATION-----------
 \section{Education}
@@ -124,7 +131,7 @@
       {Yale University}{New Haven, CT}
       {B.S. Computer Science, B.S. Electrical Engineering (ABET)}{May 2028}
       \resumeItemListStart
-        \resumeItem{Relevant Coursework: VLSI System Design, FPGA-Based Acceleration, Computer Architecture, Operating Systems, Systems Programming, Data Structures, Algorithms, Microelectronics }
+        \resumeItem{Relevant Coursework: VLSI System Design, FPGA-Based Acceleration, Computer Networks, Operating Systems }
       \resumeItemListEnd
   \resumeSubHeadingListEnd
 
@@ -134,12 +141,13 @@
   \resumeSubHeadingListStart
     \resumeSubheading
       {Undergraduate Research Assistant}{Jun 2025 -- Present}
-      {Yale University (Efficient Computing Lab, advised by Prof. Lin Zhong)}{New Haven, CT}
+      {Yale University, Efficient Computing Lab (advised by Prof. Lin Zhong)}{New Haven, CT}
       \resumeItemListStart
-        \resumeItem{Engineered virtual file system (VFS) for remote multi-FPGA control, replacing prior FUSE-based abstraction.}
-        \resumeItem{Boosted bitstream throughput by 17× (1.95 → 33.2 MB/s) with $<$10 ms jitter across 5 VMK180 boards via VFS.}
-        \resumeItem{Validated correctness and determinism by integrating DecoNet/Helios quantum error correction (QEC) software.}
-        \resumeItem{Ported Micro Blossom QEC software for distributed execution on FPGA-attached ARM cores; this was the first such distributed implementation, achieving 14× latency reduction from similar algorithms and order-of-magnitude lower physical error rates ($\approx$0.05\% vs. $\approx$1–1.5\% for Helios), with mathematical optimality guarantees.}
+        \resumeItem{Accomplished 80\% reduction in development time by engineering a virtual file system for multi-FPGA control, validated by DECONET/HELIOS, a production-grade distributed quantum error code decoder.}
+        \resumeItem{Developed distributed network for server-FPGA communication with custom UDP/TCP protocols, achieving 100\% critical packet delivery \& $<$1 minute end-to-end time for FPGA configuration.}
+        \resumeItem{Ported and optimized Micro Blossom quantum error correction software for distributed execution on FPGA-attached ARM cores, achieving the first such implementation with 14× latency reduction.}
+        \resumeItem{Enabled scalable multi-FPGA parallelism by designing file system architecture with support for thousands to millions of FPGA nodes, to be used for high-throughput quantum error code decoding experiments.}
+        \resumeItem{Simplified user experience by developing 5+ Bash scripts \& a scripting language, reducing project setup and configuration to 1-2 commands per FPGA.}
       \resumeItemListEnd
   \resumeSubHeadingListEnd
 
@@ -148,41 +156,32 @@
 \section{Projects}
     \resumeSubHeadingListStart
         \resumeProjectHeading
-          {\textbf{FPGA Control Stack} $|$ \emph{Linux Kernel, PetaLinux, Vivado, File Systems, Distributed Systems}}{Jun 2025 -- Present}
+          {\textbf{Project Liquid: Flight Computer} $|$ \emph{Rust, Real-Time Systems, Radio Protocols}}{Aug 2025 -- Present}
           \resumeItemListStart
-            \resumeItem{Developed distributed VFS abstraction to manage remote \& runtime configuration of FPGA nodes over Ethernet.}
-            \resumeItem{Demonstrated sublinear latency scaling across 5+ nodes via parallel file-based access.}
-            \resumeItem{Automated per-board kernel module injection ({\tt reboot}, {\tt configure}, {\tt fpga-client}) with custom PetaLinux scripts.}
-            \resumeItem{Enabled secure, permission-aware access with automatic registration via 128-bit hardware DNA identifiers.}
+            \resumeItem{Designed PCB integrating Teensy 4.1 and sensors to enable onboard sequencing, improving system reliability.}
+            \resumeItem{Programmed real-time logic for fueling, arming, apogee detection, chute deploy, \& comms, for safe mission ops.}
+            \resumeItem{Built TDMA-based radio protocol with CRC \& ACKs achieving $<$100ms end-to-end latency.}
+            \resumeItem{Offloaded non-critical compute to coprocessor, reducing comms latency by 30\% \& improving system reliability.}
           \resumeItemListEnd
         \resumeProjectHeading
-          {\textbf{Flight Computer (Liquid Rocket)} $|$ \emph{Rust, Real-Time Systems, Radio Protocols}}{Aug 2025 -- Present}
+          {\textbf{Project Liquid: EGSE} $|$ \emph{C++, Sensor Integration, LTspice, HIL Testing}}{Oct 2024 -- Present}
           \resumeItemListStart
-            \resumeItem{Designed PCB with Teensy 4.1, inertial \& analog sensors, and RFD900x modem for onboard sequencing.}
-            \resumeItem{Programmed real-time logic incl. fueling, arming, apogee detection, chute deploy, and bi-directional comms.}
-            \resumeItem{Built CSMA-based radio protocol with CRC and ACKs, achieving $<$100ms end-to-end latency under load.}
-            \resumeItem{Offloaded non-critical compute to secondary processor, reducing latency by 30\% via hardware task delegation.}
+            \resumeItem{Programmed Teensy 4.1 firmware for GPIO valve control to automate 10+ ethane \& nitrous valves.}
+            \resumeItem{Developed C++ drivers for NAT 8252 pressure sensors with $\pm$1\% measurement accuracy.}
+            \resumeItem{Simulated 20+ circuits in LTspice to verify signal integrity \& fail-safes, reducing hardware faults during testing.}
+            \resumeItem{Executed HIL validation tests with 99.9\% uptime during hotfire campaigns, ensuring robustness in real conditions.}
           \resumeItemListEnd
         \resumeProjectHeading
-          {\textbf{EGSE (Liquid Rocket Ground Support)} $|$ \emph{C++, Analog Sensors, LTspice, HIL Testing}}{Oct 2024 -- Present}
+          {\textbf{Graphics Research: Wavefront (.obj) Parser} $|$ \emph{C++, SIMD, Multithreading, Optimization}}{Jul 2025 -- Present}
           \resumeItemListStart
-            \resumeItem{Programmed Teensy 4.1 firmware for high-speed GPIO control of 10+ ethane \& nitrous valves.}
-            \resumeItem{Developed modular C++ drivers for NAT 8252 pressure transducers, achieving $\pm$1\% measurement accuracy.}
-            \resumeItem{Simulated 20+ circuits in LTspice to verify signal integrity, power stability, and fail-safe logic.}
-            \resumeItem{Executed full HIL validation \& recovery tests, achieving 99.9\% uptime across integrated hotfire test campaigns.}
+            \resumeItem{Implemented fast .obj parser with file chunking parallelism and SIMD instructions, reducing parse times 7× compared to industry standard.}
+            \resumeItem{Used profiling tools to optimize code iteratively, resulting in 500x speedup after a month of optimizations.}
           \resumeItemListEnd
         \resumeProjectHeading
-          {\textbf{\href{https://github.com/Nathan5563/mesh-lib}{Wavefront (.obj) Parser}} $|$ \emph{C++, Parsing, Performance Optimization, Multithreading}}{Jul 2025 -- Present}
+          {\textbf{NES Emulator} $|$ \emph{Rust, Computer Architecture, Debugging}}{Mar 2025 -- Present}
           \resumeItemListStart
-            \resumeItem{Implemented fast obj parser in C++ with support for vertices, textures, normals, and faces.}
-            \resumeItem{Recorded $<$0.2s parse time for 100+ MB files and $<$3s for 3+ GB meshes using thread pool acceleration.}
-            \resumeItem{Optimized with Linux perf and callgrind profiling to achieve $>$7x speedup over industry-standard {\tt tinyobjloader}.}
-          \resumeItemListEnd
-        \resumeProjectHeading
-          {\textbf{\href{https://github.com/Nathan5563/nnes}{NES Emulator}} $|$ \emph{Rust, Computer Architecture, Debugging}}{Mar 2025 -- Present}
-          \resumeItemListStart
-            \resumeItem{Built a 5K+ LoC cycle-accurate NES emulator with full 2A03 CPU coverage and precise PPU timing.}
-            \resumeItem{Crafted an egui debugger with live stepping, memory/register views, and PPU visualization to accelerate dev.}
+            \resumeItem{Built 5K+ LoC cycle-accurate NES emulator with full CPU and PPU timing support for precise game emulation.}
+            \resumeItem{Crafted egui debugger with live stepping and visualization to accelerate development and debugging.}
           \resumeItemListEnd
     \resumeSubHeadingListEnd
 
@@ -190,10 +189,10 @@
 \section{Technical Skills}
  \begin{itemize}[leftmargin=0.15in, label={}]
     \small{\item{
-     \textbf{Languages}{: Rust, C, C++, Python, D, SystemVerilog, Go, x86 Assembly, TypeScript, JavaScript, C\#} \\
+     \textbf{Languages}{: Rust, C, C++, Python, D, SystemVerilog, Golang, x86 Assembly, TypeScript, JavaScript, C\#} \\
      \textbf{Embedded}{: FPGA design, ARM Cortex-M, Linux, RTOS, Yocto, bare-metal, PCB design} \\
-     \textbf{Tools}{: Git, GDB, Valgrind, VS Code, Vivado, Altium Designer, LTspice} \\
-     \textbf{Protocols}{: CSMA, CRC, TCP, UDP, UART, SPI, I$^2$C} \\
+     \textbf{Tools}{: Git, GDB, Valgrind, Vivado Design Suite, Altium Designer, LTspice} \\
+     \textbf{Protocols}{: UDP, TCP, UART, SPI, I$^2$C, BGP, IS-IS, TDMA, CSMA, CRC} \\
     }}
  \end{itemize}
 
