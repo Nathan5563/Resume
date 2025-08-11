@@ -19,6 +19,7 @@
 \usepackage{fancyhdr}
 \usepackage[english]{babel}
 \usepackage{tabularx}
+\usepackage{amsmath}
 \input{glyphtounicode}
 \usepackage{xcolor}
 \definecolor{linkblue}{RGB}{0, 50, 175} % subtle navy blue
@@ -79,7 +80,7 @@
   \vspace{-2pt}\item
     \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
       \textbf{#1} & #2 \\
-      \textit{\small#3} & \textit{\small #4} \\
+      \text{\small#3} & \text{\small #4} \\
     \end{tabular*}\vspace{-7pt}
 }
 
@@ -141,7 +142,7 @@
   \resumeSubHeadingListStart
     \resumeSubheading
       {Undergraduate Research Assistant}{Jun 2025 -- Present}
-      {Yale University, Efficient Computing Lab (advised by Prof. Lin Zhong)}{New Haven, CT}
+      {Yale University, Advisor: Professor Lin Zhong, Ph.D.}{New Haven, CT}
       \resumeItemListStart
         \resumeItem{Accomplished 80\% reduction in development time by engineering a virtual file system for multi-FPGA control, validated by DECONET/HELIOS, a production-grade distributed quantum error code decoder.}
         \resumeItem{Developed distributed network for server-FPGA communication with custom UDP/TCP protocols, achieving 100\% critical packet delivery \& $<$1 minute end-to-end time for FPGA configuration.}
