@@ -130,9 +130,9 @@
   \resumeSubHeadingListStart
     \resumeSubheading
       {Yale University}{New Haven, CT}
-      {B.S. Computer Science, B.S. Electrical Engineering (ABET)}{May 2028}
+      {B.S. Computer Science, B.S. Electrical Engineering (ABET)}{GPA: 3.84/4.00}
       \resumeItemListStart
-        \resumeItem{Relevant Coursework: VLSI System Design, FPGA-Based Acceleration, Computer Networks, Operating Systems }
+        \resumeItem{Relevant Coursework: Computer Systems, Building Game Engines, Algorithms, Data Structures, Electronics }
       \resumeItemListEnd
   \resumeSubHeadingListEnd
 
@@ -159,10 +159,15 @@
         \resumeProjectHeading
           {\textbf{Project Liquid: Flight Computer} $|$ \emph{Rust, Real-Time Systems, Radio Protocols}}{Aug 2025 -- Present}
           \resumeItemListStart
-            \resumeItem{Designed PCB integrating Teensy 4.1 and sensors to enable onboard sequencing, improving system reliability.}
-            \resumeItem{Programmed real-time logic for fueling, arming, apogee detection, chute deploy, \& comms, for safe mission ops.}
-            \resumeItem{Built TDMA-based radio protocol with CRC \& ACKs achieving $<$100ms end-to-end latency.}
+            \resumeItem{Building PCB integrating Teensy 4.1 and sensors to enable onboard sequencing, improving system reliability.}
+            \resumeItem{Designed TDMA-based radio protocol with CRC \& ACKs achieving sub-100ms end-to-end latency.}
             \resumeItem{Offloaded non-critical compute to coprocessor, reducing comms latency by 30\% \& improving system reliability.}
+          \resumeItemListEnd
+        \resumeProjectHeading
+          {\textbf{Graphics Research: Wavefront (.obj) Parser} $|$ \emph{C++, SIMD, Multithreading}}{Jul 2025 -- Present}
+          \resumeItemListStart
+            \resumeItem{Implemented fast .obj parser with file chunking parallelism and SIMD instructions, reducing parse times 7× compared to industry standard.}
+            \resumeItem{Used profiling tools to optimize code iteratively, resulting in 500x speedup after a month of optimizations.}
           \resumeItemListEnd
         \resumeProjectHeading
           {\textbf{Project Liquid: EGSE} $|$ \emph{C++, Sensor Integration, LTspice, HIL Testing}}{Oct 2024 -- Present}
@@ -173,13 +178,7 @@
             \resumeItem{Executed HIL validation tests with 99.9\% uptime during hotfire campaigns, ensuring robustness in real conditions.}
           \resumeItemListEnd
         \resumeProjectHeading
-          {\textbf{Graphics Research: Wavefront (.obj) Parser} $|$ \emph{C++, SIMD, Multithreading, Optimization}}{Jul 2025 -- Present}
-          \resumeItemListStart
-            \resumeItem{Implemented fast .obj parser with file chunking parallelism and SIMD instructions, reducing parse times 7× compared to industry standard.}
-            \resumeItem{Used profiling tools to optimize code iteratively, resulting in 500x speedup after a month of optimizations.}
-          \resumeItemListEnd
-        \resumeProjectHeading
-          {\textbf{NES Emulator} $|$ \emph{Rust, Computer Architecture, Debugging}}{Mar 2025 -- Present}
+          {\textbf{NES Emulator} $|$ \emph{Rust, Computer Architecture, Debugging}}{Mar 2025 -- Jul 2025}
           \resumeItemListStart
             \resumeItem{Built 5K+ LoC cycle-accurate NES emulator with full CPU and PPU timing support for precise game emulation.}
             \resumeItem{Crafted egui debugger with live stepping and visualization to accelerate development and debugging.}
@@ -190,10 +189,10 @@
 \section{Technical Skills}
  \begin{itemize}[leftmargin=0.15in, label={}]
     \small{\item{
-     \textbf{Languages}{: Rust, C, C++, Python, D, SystemVerilog, Golang, x86 Assembly, TypeScript, JavaScript, C\#} \\
-     \textbf{Embedded}{: FPGA design, STM32, Linux, RTOS, Yocto, bare-metal, PCB design} \\
-     \textbf{Tools}{: Git, GDB, Valgrind, Vivado Design Suite, Oscilloscope, Altium Designer, LTspice} \\
-     \textbf{Protocols}{: UDP, TCP, UART, SPI, I$^2$C, BGP, IS-IS, TDMA, CSMA, CRC} \\
+     \textbf{Languages}{: Rust, C, C++, Dlang, Python, Golang, x86 Assembly, TypeScript, JavaScript, C\#, SystemVerilog} \\
+     \textbf{Embedded}{: STM32, Linux, RTOS, Yocto, bare-metal, PCB design, FPGA design} \\
+     \textbf{Tools}{: Git, GDB, Valgrind, Vivado Design Suite, Altium Designer, LTspice, Oscilloscope} \\
+     \textbf{Protocols}{: UDP, TCP, UART, SPI, I$^2$C, TDMA, CSMA, CRC} \\
     }}
  \end{itemize}
 
