@@ -19,20 +19,20 @@ jobs:
       with:
         token: ${{ secrets.GITHUB_TOKEN }}
     
-    - name: Install LaTeX
+    - name: Install LaTeX with XeTeX
       run: |
         sudo apt-get update
-        sudo apt-get install -y texlive-latex-base texlive-latex-extra texlive-fonts-recommended texlive-fonts-extra
-        
-    - name: Compile LaTeX to PDF
+        sudo apt-get install -y texlive-xetex texlive-latex-base texlive-latex-extra texlive-fonts-recommended texlive-fonts-extra
+
+    - name: Compile LaTeX to PDF with XeLaTeX
       run: |
-        # Find all .tex files and compile them
+        # Find all .tex files and compile them using xelatex
         for tex_file in *.tex; do
           if [ -f "$tex_file" ]; then
-            echo "Compiling $tex_file..."
-            pdflatex -interaction=nonstopmode "$tex_file"
+            echo "Compiling $tex_file with XeLaTeX..."
+            xelatex -interaction=nonstopmode "$tex_file"
             # Run twice to resolve references
-            pdflatex -interaction=nonstopmode "$tex_file"
+            xelatex -interaction=nonstopmode "$tex_file"
             echo "Successfully compiled $tex_file to ${tex_file%.tex}.pdf"
           fi
         done
