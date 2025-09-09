@@ -19,11 +19,20 @@ jobs:
       with:
         token: ${{ secrets.GITHUB_TOKEN }}
     
-    - name: Install LaTeX with XeTeX
+    - name: Install LaTeX with XeTeX and Fonts
       run: |
         sudo apt-get update
-        sudo apt-get install -y texlive-xetex texlive-latex-base texlive-latex-extra texlive-fonts-recommended texlive-fonts-extra
-
+        sudo apt-get install -y \
+          texlive-xetex \
+          texlive-latex-base \
+          texlive-latex-extra \
+          texlive-fonts-recommended \
+          texlive-fonts-extra \
+          fontconfig \
+          ttf-mscorefonts-installer
+        sudo fc-cache -fv
+        fc-list | grep -i arial || echo "Arial not found"
+    
     - name: Compile LaTeX to PDF with XeLaTeX
       run: |
         # Find all .tex files and compile them using xelatex
