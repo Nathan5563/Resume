@@ -9,6 +9,7 @@
 \documentclass[letterpaper,11pt]{article}
 
 \usepackage{latexsym}
+\usepackage{fontspec}
 \usepackage[empty]{fullpage}
 \usepackage{titlesec}
 \usepackage{marvosym}
@@ -20,7 +21,7 @@
 \usepackage[english]{babel}
 \usepackage{tabularx}
 \usepackage{amsmath}
-\input{glyphtounicode}
+% \input{glyphtounicode}
 \usepackage{xcolor}
 \definecolor{linkblue}{RGB}{0, 50, 175} % subtle navy blue
 \usepackage[colorlinks=true, urlcolor=linkblue]{hyperref}
@@ -62,8 +63,7 @@
 }{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
 
 % Ensure that generate pdf is machine readable/ATS parsable
- \input{glyphtounicode}
-\pdfgentounicode=1
+% \pdfgentounicode=1
 
 %-------------------------
 % Custom commands
@@ -111,8 +111,8 @@
 %-------------------------------------------
 %%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-
 \begin{document}
+\setmainfont{Arial}
 
 %----------HEADING----------
 \begin{center}
@@ -144,23 +144,23 @@
       \resumeItemListStart
         \resumeItem{Accomplished 80\% reduction in development time by engineering a virtual file system for multi-FPGA control, validated by DECONET/HELIOS, a production-grade distributed quantum error code decoder.}
         \resumeItem{Developed distributed network for server-FPGA communication with custom UDP/TCP protocols, achieving 100\% critical packet delivery and less than 1 minute end-to-end time for FPGA configuration.}
-        \resumeItem{Scaled multi-FPGA parallelism by designing a file system architecture supporting thousands to millions of FPGA nodes for high-throughput quantum error code decoding experiments.}
-        \resumeItem{Simplified user experience by developing a command line tool with 5+ Bash scripts, reducing project setup to 1-2 commands per FPGA without sacrificing flexibility.}
+        \resumeItem{Scaled multi-FPGA parallelism by designing a file system architecture supporting millions of FPGA nodes for high-throughput quantum error code decoding experiments.}
+        \resumeItem{Simplified user experience by developing 5+ Bash scripts, reducing project setup to 1-2 commands per FPGA.}
       \resumeItemListEnd
     \resumeSubheading
       {Yale Computer Graphics Group}{Jul 2025 -- Present}
       {Researcher (advised by Prof. Mike Shah)}{Part Time, New Haven, CT}
       \resumeItemListStart
-        \resumeItem{Achieved 7× faster .obj parsing by implementing a parallel file chunking pipeline with SIMD instructions, outperforming industry-standard parsers.}
-        \resumeItem{Delivered 500× speedup by profiling and optimizing critical code paths over month-long optimization cycle.}
+        \resumeItem{Implemented a threaded .obj parser with SIMD instructions, outperforming industry-standard parser speeds by 7x.}
+        \resumeItem{Delivered 500× speedup over baseline by profiling and optimizing critical code paths over month-long period.}
         \resumeItem{Engineered an extensible test suite for multiple parsers and inputs, using repeated measurements and median absolute deviation-based outlier filtering for consistent performance metrics.}
       \resumeItemListEnd
     \resumeSubheading
       {Yale School of Engineering and Applied Science}{Aug 2025 -- Present}
       {Teaching Assistant (Computer Systems)}{Part Time, New Haven, CT}
       \resumeItemListStart
-        \resumeItem{Supported 120+ undergraduate students by holding weekly office hours, providing personalized guidance on systems programming, operating systems, and computer architecture concepts.}
-        \resumeItem{Improved student comprehension by leading review sessions and creating supplemental study resources, resulting in higher course engagement.}
+        \resumeItem{Improved student comprehension by leading review sessions and creating supplemental study resources, resulting in higher course engagement as measured by doubled lecture and review session attendance.}
+        \resumeItem{Supported 120+ undergraduate students by holding weekly office hours on systems programming fundamentals.}
         \resumeItem{Ensured fair and efficient grading of student work, delivering actionable feedback to reinforce key course material.}
       \resumeItemListEnd
   \resumeSubHeadingListEnd
