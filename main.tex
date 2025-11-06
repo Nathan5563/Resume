@@ -9,7 +9,7 @@
 \documentclass[letterpaper,11pt]{article}
 
 \usepackage{latexsym}
-% \usepackage{fontspec}
+\usepackage{fontspec}
 \usepackage[empty]{fullpage}
 \usepackage{titlesec}
 \usepackage{marvosym}
@@ -23,8 +23,11 @@
 \usepackage{amsmath}
 % \input{glyphtounicode}
 \usepackage{xcolor}
-\definecolor{linkblue}{RGB}{0, 50, 175} % subtle navy blue
-\usepackage[colorlinks=true, urlcolor=linkblue]{hyperref}
+\usepackage{hyperref}
+\hypersetup{
+    urlbordercolor=black,
+    pdfborderstyle={/S/U/W 1}
+}
 
 %----------FONT OPTIONS----------
 % sans-serif
@@ -127,10 +130,9 @@
   \resumeSubHeadingListStart
     \resumeSubheading
       {Yale University}{New Haven, CT}
-      {B.S. Computer Science, B.S. Electrical Engineering (ABET)}{May 2028}
+      {B.S. Computer Science, B.S. Electrical Engineering (ABET) | 3.84/4.00}{May 2028}
       \resumeItemListStart
-        \resumeItem{GPA: 3.84/4.00}
-        \resumeItem{Relevant Coursework: Computer Networks, Operating Systems, Computer Systems, Building Game Engines }
+        \resumeItem{Computer Architecture, Computer Networks, Game Engines, Algorithms, Computer Systems, Data Structures }
       \resumeItemListEnd
   \resumeSubHeadingListEnd
 
@@ -139,29 +141,31 @@
 \section{Experience}
   \resumeSubHeadingListStart
     \resumeSubheading
-      {Yale Efficient Computing Lab}{Jun 2025 -- Present}
-      {Research Assistant (advised by Prof. Lin Zhong)}{New Haven, CT}
+      {Computer Graphics Group (Yale University)}{Jul 2025 -- Present}
+      {Performance Engineering Researcher | Advisor: \href{https://www.mshah.io/}{Dr. Mike Shah}}{Part-time, New Haven, CT}
       \resumeItemListStart
-        \resumeItem{Accomplished 80\% reduction in development time by engineering a virtual file system for multi-FPGA control, validated by DECONET/HELIOS, a production-grade distributed quantum error code decoder.}
-        \resumeItem{Developed distributed network for server-FPGA communication with custom UDP/TCP protocols, achieving 100\% critical packet delivery and less than 1 minute end-to-end time for FPGA configuration.}
-        \resumeItem{Scaled multi-FPGA parallelism by designing a file system architecture supporting millions of FPGA nodes for high-throughput quantum error code decoding experiments.}
-        \resumeItem{Simplified user experience by developing 5+ Bash scripts, reducing project setup to 1-2 commands per FPGA.}
-      \resumeItemListEnd
-    \resumeSubheading
-      {Yale Computer Graphics Group}{Jul 2025 -- Present}
-      {Researcher (advised by Prof. Mike Shah)}{Part-time, New Haven, CT}
-      \resumeItemListStart
-        \resumeItem{Implemented threaded .obj parser with SIMD instructions, outperforming industry-standard parser speeds by 7x.}
-        \resumeItem{Delivered 500× speedup over baseline by profiling and optimizing critical code paths over month-long period.}
-        \resumeItem{Engineered an extensible test suite for multiple parsers and inputs, using repeated measurements and median absolute deviation-based outlier filtering for consistent performance metrics.}
+        \resumeItem{Implemented multithreaded Wavefront parser with SIMD, outperforming industry-standard parser speeds by 9x.}
+        \resumeItem{Delivered 500× speedup over baseline by profiling and optimizing critical code paths over semester-long sprint.}
+        \resumeItem{\textbf{Publication:} Coming soon.}
       \resumeItemListEnd
     \resumeSubheading
       {Yale School of Engineering and Applied Science}{Aug 2025 -- Present}
-      {Teaching Assistant (Computer Systems)}{Part-time, New Haven, CT}
+      {Teaching Assistant | Computer Systems}{Part-time, New Haven, CT}
       \resumeItemListStart
-        \resumeItem{Improved student comprehension by leading review sessions and creating supplemental study resources, resulting in higher course engagement as measured by 2x lecture and review session attendance.}
         \resumeItem{Supported 120+ undergraduate students by holding weekly office hours on systems programming fundamentals.}
-        \resumeItem{Ensured fair and efficient grading of student work, delivering actionable feedback to reinforce key course material.}
+      \resumeItemListEnd
+    \resumeSubheading
+      {Efficient Computing Lab (Yale University)}{Jun 2025 -- Aug 2025}
+      {Systems Engineering Researcher | Advisor: \href{www.linzhong.org}{Prof. Lin Zhong}}{Full-time, New Haven, CT}
+      \resumeItemListStart
+        \resumeItem{Accomplished 80\% reduction in development time by engineering a virtual file system for multi-FPGA control, validated by DECONET/HELIOS, a production-grade distributed quantum error code decoder.}
+        \resumeItem{Developed distributed network for server-FPGA communication with custom UDP/TCP protocols, achieving 100\% critical packet delivery and less than 1 minute end-to-end time for remote FPGA configuration.}
+      \resumeItemListEnd
+    \resumeSubheading
+      {Student Technology Collaborative (Yale University)}{Oct 2024 -- May 2025}
+      {Hardware Specialist}{Part-time, New Haven, CT}
+      \resumeItemListStart
+        \resumeItem{}
       \resumeItemListEnd
   \resumeSubHeadingListEnd
 
@@ -170,25 +174,39 @@
 \section{Projects}
     \resumeSubHeadingListStart
         \resumeProjectHeading
-          {\textbf{Yale Project Liquid: Flight Computer} $|$ \emph{Rust, Real-Time Systems, Radio Protocols}}{Aug 2025 -- Present}
+          {\textbf{Quark Game Engine} $|$ \emph{Dlang, ECS Architecture, SDL, GTK}}{Oct 2025 -- Present}
           \resumeItemListStart
-            \resumeItem{Building PCB integrating Teensy 4.1 and sensors to enable onboard sequencing and rocket recovery.}
-            \resumeItem{Designed time-division multiplexed radio protocol with CRCs \& ACKs achieving sub-100ms end-to-end latency.}
-            \resumeItem{Offloaded non-critical compute to coprocessor, reducing comms latency by 30\% and improving system reliability.}
+            \resumeItem{}
           \resumeItemListEnd
         \resumeProjectHeading
-          {\textbf{Yale Project Liquid: EGSE} $|$ \emph{C++, Sensor Integration, LTspice, HIL Testing}}{Oct 2024 -- Sep 2025}
+          {\textbf{MajorAudit -- Yale Computer Society} $|$ \emph{TypeScript, Python, Django, PostgreSQL}}{Sep 2025 -- Present}
           \resumeItemListStart
-            \resumeItem{Programmed Teensy 4.1 firmware for GPIO valve control to remotely actuate 10+ ethane and nitrous valves.}
-            \resumeItem{Developed C++ drivers for NAT 8252 pressure sensors with 1\% error rate on psi values.}
-            \resumeItem{Simulated 20+ circuits in LTspice to verify signal integrity and fail-safes, reducing hardware faults during testing.}
-            \resumeItem{Executed HIL validation tests with 99.9\% uptime during hotfire campaigns, ensuring robustness in real conditions.}
+            \resumeItem{}
           \resumeItemListEnd
         \resumeProjectHeading
-          {\textbf{NES Emulator} $|$ \emph{Rust, Computer Architecture, Debugging}}{Mar 2025 -- Jul 2025}
+          {\textbf{Flight Computer -- Yale Project Liquid} $|$ \emph{Rust, Real-Time Systems, Radio Protocols}}{Jul 2025 -- Present}
           \resumeItemListStart
-            \resumeItem{Built 5K+ LoC cycle-accurate NES emulator with full CPU and PPU timing support for precise game emulation.}
-            \resumeItem{Implemented egui debugger with live stepping and visualization to accelerate development and debugging.}
+            \resumeItem{Developed time-division multiplexed radio protocol with CRCs \& ACKs achieving sub-100ms end-to-end latency.}
+          \resumeItemListEnd
+        \resumeProjectHeading
+          {\textbf{EGSE -- Yale Project Liquid} $|$ \emph{C++, Sensor Integration, LTspice, HIL Testing}}{Oct 2024 -- Nov 2025}
+          \resumeItemListStart
+            \resumeItem{Designed, simulated, fabricated, and tested PCB for liquid rocket fuel control with Altium Designer and LTspice.}
+          \resumeItemListEnd
+        \resumeProjectHeading
+          {\textbf{\href{https://github.com/Nathan5563/ntraycer}{ntraycer} -- Path-Based Ray Tracer} $|$ \emph{Dlang, Path-Based Ray Tracing, Physics, Rendering}}{Mar 2025 -- Jul 2025}
+          \resumeItemListStart
+            \resumeItem{Engineered a path-based ray tracer entirely from scratch (no library imports) for generating photorealistic images.}
+          \resumeItemListEnd
+        \resumeProjectHeading
+          {\textbf{\href{https://github.com/Nathan5563/nnes}{nnes} -- NES Emulator} $|$ \emph{Rust, Computer Architecture, Debugging}}{Mar 2025 -- Jul 2025}
+          \resumeItemListStart
+            \resumeItem{Built 5K+ LoC NES emulator in Rust, down to the various graphical glitches in the NES (plays Donkey Kong!).}
+          \resumeItemListEnd
+        \resumeProjectHeading
+          {\textbf{\href{https://github.com/Clash-RoYALIES/iquack_website}{TD-QAP} -- MIT iQuHack D-Wave $1^\text{st}$ Place Prize} $|$ \emph{Python, Quantum Annealing}}{Jan 2025}
+          \resumeItemListStart
+            \resumeItem{Solved the time-dependent quadratic assignment problem for dynamic facility layout optimization.}
           \resumeItemListEnd
     \resumeSubHeadingListEnd
 
@@ -197,8 +215,8 @@
  \begin{itemize}[leftmargin=0.15in, label={}]
     \small{\item{
      \textbf{Languages}{: Rust, C, C++, Dlang, Python, Golang, x86 Assembly, TypeScript, JavaScript, C\#, SystemVerilog} \\
+     \textbf{Tools \& Libraries}{: Git, GDB, Valgrind, Altium Designer, LTspice, SDL, GTK, OpenGL} \\
      \textbf{Embedded}{: STM32, RTOS, Linux, Yocto, bare-metal, PCB design, FPGA design} \\
-     \textbf{Tools}{: Git, GDB, Valgrind, Altium Designer, LTspice, Vivado Design Suite, Oscilloscope} \\
      \textbf{Protocols}{: UDP, TCP, UART, SPI, I$^2$C, TDMA, CSMA, CRC} \\
     }}
  \end{itemize}
